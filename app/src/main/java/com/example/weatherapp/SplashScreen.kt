@@ -37,7 +37,7 @@ class SplashScreen : AppCompatActivity() {
             a.putExtra("Samuel", LONG)
             startActivity(a)
             finish()
-        }, 3000)
+        }, 7000)
     }
 
     @SuppressLint("MissingPermission")

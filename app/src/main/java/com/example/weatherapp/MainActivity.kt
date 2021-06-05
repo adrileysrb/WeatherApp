@@ -1,26 +1,14 @@
 package com.example.weatherapp
 
-import kotlin.coroutines.*
-import android.Manifest
-import android.annotation.SuppressLint
-import android.content.Context
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.location.Location
-import android.location.LocationManager
+
 import android.os.AsyncTask
 import android.os.Bundle
-import android.os.Looper
-import android.provider.Settings
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
-import com.google.android.gms.location.*
 import org.json.JSONObject
 import java.net.URL
 import java.text.SimpleDateFormat
@@ -54,8 +42,6 @@ class MainActivity : AppCompatActivity() {
             findViewById<ProgressBar>(R.id.loader).visibility = View.VISIBLE
             findViewById<RelativeLayout>(R.id.mainContainer).visibility = View.GONE
             findViewById<TextView>(R.id.errorText).visibility = View.GONE
-
-
         }
         override fun doInBackground(vararg params: String?): String? {
             Log.i("Adriley", "doInBackground")
@@ -111,13 +97,11 @@ class MainActivity : AppCompatActivity() {
 
                 findViewById<ProgressBar>(R.id.loader).visibility = View.GONE
                 findViewById<RelativeLayout>(R.id.mainContainer).visibility= View.VISIBLE
-
             }
             catch (e: java.lang.Exception){
                 findViewById<ProgressBar>(R.id.loader).visibility = View.GONE
                 findViewById<TextView>(R.id.errorText).visibility = View.VISIBLE
             }
         }
-
     }
 }
